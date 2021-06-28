@@ -1,4 +1,6 @@
-﻿# Travel Refunds
+# Travel Refunds
+
+<img src="https://github.com/Daniele-Tentoni/xamarin-travel-refunds/blob/main/screenshots/travel_result_screenshot.jpg" alt="Application screenshot" width="216" heigth="468">
 
 Application made with Xamarin.Forms.
 
