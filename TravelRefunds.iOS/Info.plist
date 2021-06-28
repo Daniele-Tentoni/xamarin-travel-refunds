@@ -32,6 +32,8 @@
     <string>LaunchScreen</string>
     <key>CFBundleName</key>
     <string>TravelRefunds</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Get your location to fill From or To location fields in Calculator page.</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
