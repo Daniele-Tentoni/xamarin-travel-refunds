@@ -20,12 +20,17 @@ namespace TravelRefunds.Services
     {
         private const string API_KEY = "";
 
-        public async Task<IEnumerable<string>> GetTravelHistoryAsync()
+        public async Task<IEnumerable<TravelQuery>> GetTravelHistoryAsync()
         {
-            return await Task.FromResult(Barrel.Current.GetKeys(MonkeyCache.CacheState.Active));
+            return await Task.Run(() =>
+            {
+                var keys = Barrel.Current.GetKeys(MonkeyCache.CacheState.Active);
+                var queries = keys.Select(s => Barrel.Current.Get<TravelQuery>(s));
+                return queries;
+            });
         }
 
-        public Task<TravelQuery> AddToTravelHistoryAsync(string start, string finish, DistanceUnit? distanceUnit, int? distance)
+        public Task<TravelQuery> AddToTravelHistoryAsync(string start, string finish, DistanceUnit? distanceUnit, double? distance)
         {
             var key = $"{start} - {finish}";
             var unit = distanceUnit ?? DistanceUnit.Kilometer;
@@ -54,20 +59,13 @@ namespace TravelRefunds.Services
             {
                 // Connection to internet is available and I can ask to API
                 var apiResponse = RestService.For<ITravelApi>("http://dev.virtualearth.net");
-                try
-                {
-                    var distance = await apiResponse.GetTravelDistanceAsync(start, finish, API_KEY);
-                    var set = distance.resourceSets.FirstOrDefault();
-                    var res = set.resources.FirstOrDefault();
-                    var unit = (DistanceUnit)Enum.Parse(typeof(DistanceUnit), res.distanceUnit);
-                    var dis = (int)res?.travelDistance;
-                    var query = await AddToTravelHistoryAsync(start, finish, unit, dis);
-                    return $"{res.travelDistance} {res.distanceUnit}";
-                }
-                catch (Exception e)
-                {
-                    return $"Error: {e.Message}";
-                }
+                var distance = await apiResponse.GetTravelDistanceAsync(start, finish, API_KEY);
+                var set = distance.resourceSets.FirstOrDefault();
+                var res = set.resources.FirstOrDefault();
+                var unit = (DistanceUnit)Enum.Parse(typeof(DistanceUnit), res.distanceUnit);
+                var dis = res?.travelDistance;
+                var query = await AddToTravelHistoryAsync(start, finish, unit, dis);
+                return $"{res.travelDistance} {res.distanceUnit}";
             }
 
             if (!Barrel.Current.IsExpired(key))

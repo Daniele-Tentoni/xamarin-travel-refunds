@@ -35,12 +35,6 @@
     <ShellContent ContentTemplate="{DataTemplate main:SplashScreenPage}" Route="Splashscreen" />
 
     <TabBar AutomationId="CalculatorTab">
-        <Tab Title="About" Route="AboutPage">
-            <Tab.Icon>
-                <FontImageSource FontFamily="fas" Glyph="{x:Static fa:FontAwesomeIcons.Info}" />
-            </Tab.Icon>
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
         <ShellContent
             Title="Calculator"
             AutomationId="CalculatorShellItem"
@@ -52,12 +46,18 @@
         </ShellContent>
         <ShellContent
             Title="History"
-            ContentTemplate="{DataTemplate local:ItemsPage}"
+            ContentTemplate="{DataTemplate local:HistoryPage}"
             Route="HistoryPage">
             <ShellContent.Icon>
                 <FontImageSource FontFamily="fas" Glyph="{x:Static fa:FontAwesomeIcons.History}" />
             </ShellContent.Icon>
         </ShellContent>
+        <Tab Title="About" Route="AboutPage">
+            <Tab.Icon>
+                <FontImageSource FontFamily="fas" Glyph="{x:Static fa:FontAwesomeIcons.Info}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
     </TabBar>
 
     <!--
