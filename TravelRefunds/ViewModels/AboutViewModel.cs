@@ -10,7 +10,7 @@ namespace TravelRefunds.ViewModels
         public AboutViewModel()
         {
             Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
+            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://github.com/Daniele-Tentoni/xamarin-travel-refunds"));
         }
 
         public ICommand OpenWebCommand { get; }
