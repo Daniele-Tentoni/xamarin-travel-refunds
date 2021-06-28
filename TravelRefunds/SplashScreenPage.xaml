@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="TravelRefunds.SplashScreenPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <forms:AnimationView
+                x:Name="animationView"
+                Animation="resource://Resources.Animations.lottie_refunds_splashscreen.json?assembly=TravelRefunds"
+                AnimationSource="EmbeddedResource"
+                AutoPlay="True"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor},
+                                                  Light={StaticResource PrimaryBackgroundColor}}"
+                HorizontalOptions="FillAndExpand"
+                OnFinishedAnimation="AnimationView_OnFinishedAnimation"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

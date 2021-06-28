@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelRefunds.Android", "TravelRefunds.Android\TravelRefunds.Android.csproj", "{EFE0A7CF-412E-4D63-8768-0477C065F720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelRefunds.iOS", "TravelRefunds.iOS\TravelRefunds.iOS.csproj", "{4778B851-29EA-4AA2-9A64-E5C52EC65B85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelRefunds.UITests", "TravelRefunds.UITests\TravelRefunds.UITests.csproj", "{A74D84C3-0FDE-4C78-82B5-463A10D29060}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TravelRefunds_old", "TravelRefunds\TravelRefunds_old.shproj", "{A903DEDE-E964-4117-9964-D41A1548C82C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3CA7CDF2-87DF-49D5-BC9B-36729F76874D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelRefunds", "TravelRefunds\TravelRefunds.csproj", "{52D9D581-D8FD-4E78-B920-28EA6B428A6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{EFE0A7CF-412E-4D63-8768-0477C065F720}.Release|iPhone.Build.0 = Release|Any CPU
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Debug|iPhone.Build.0 = Debug|iPhone
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Release|iPhone.ActiveCfg = Release|iPhone
+		{4778B851-29EA-4AA2-9A64-E5C52EC65B85}.Release|iPhone.Build.0 = Release|iPhone
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A74D84C3-0FDE-4C78-82B5-463A10D29060}.Release|iPhone.Build.0 = Release|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{52D9D581-D8FD-4E78-B920-28EA6B428A6A}.Release|iPhone.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8EAB1F9-2C2A-41FF-A8EC-C723D486630D}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.StandardHeader = $2
+		$2.IncludeInNewFiles = False
+		$0.VersionControlPolicy = $3
+		description = Calculate travel refunds by from and to locations.
+	EndGlobalSection
+EndGlobal

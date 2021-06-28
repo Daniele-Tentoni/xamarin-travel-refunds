@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TravelRefunds.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fa="clr-namespace:TravelRefunds.Helpers"
+    xmlns:vm="clr-namespace:TravelRefunds.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="vm:AboutViewModel"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout
+            BackgroundColor="{StaticResource Accent}"
+            HorizontalOptions="Fill"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image
+                        HeightRequest="64"
+                        Source="xamarin_logo.png"
+                        VerticalOptions="Center" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout
+                Padding="30,24,30,24"
+                Orientation="Vertical"
+                Spacing="10">
+                <Label FontSize="Title" Text="Curriculum application" />
+                <Label
+                    Padding="0,0,0,0"
+                    FontSize="16"
+                    Text="I'm Daniele Tentoni, enthusiast with Xamarin.Forms doing this application as a curriculum app to show what things I can do with this awesome framework." />
+                <Label
+                    Padding="0,16,0,0"
+                    FontSize="16"
+                    TextType="Html">
+                    <![CDATA[
+                    What I've done in this application:
+                    <ul>
+                        <dt>Embedded Fonts with Font Awesome.</dt>
+                        <dd></dd>
+                        <li>Lottie Animations</li>
+                        <li>Travel Api: for travel refunds calculations</li>
+                        <li>Monkey Barrels caching: for storing recently calculated refunds</li>
+                    </ul>
+                    ]]>
+                </Label>
+                <Label
+                    Padding="0,16,0,0"
+                    FontSize="16"
+                    TextType="Html">
+                    <![CDATA[
+                    What I'm planning to add in this application:
+                    <ul>
+                        <li>Lazy load views</li>
+                        <li>Microcharts reports</li>
+                        <li>App Actions</li>
+                        <liMaterial Design></li>
+                        <li>Dark Theme support</li>
+                        <li>Email report sharing</li>
+                    </ul>
+                    ]]>
+                </Label>
+                <Label Padding="0,24,0,0" FontSize="16">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Learn more at " />
+                                <Span FontAttributes="Bold" Text="official repo" />
+                                <Span Text="." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button
+                    Margin="0,10,0,0"
+                    Command="{Binding OpenWebCommand}"
+                    Text="Learn more">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="fab" Glyph="{x:Static fa:FontAwesomeIcons.Github}" />
+                    </Button.ImageSource>
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

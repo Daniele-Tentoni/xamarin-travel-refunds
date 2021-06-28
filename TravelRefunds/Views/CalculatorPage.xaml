@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="TravelRefunds.Views.CalculatorPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:viewModels="clr-namespace:TravelRefunds.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="viewModels:CalculatorViewModel"
+    Visual="Material">
+    <ContentPage.Content>
+        <Grid
+            Margin="8"
+            ColumnDefinitions="*, 2*, *"
+            ColumnSpacing="4"
+            RowDefinitions="Auto, Auto, Auto, Auto, *"
+            RowSpacing="4">
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="Large"
+                Text="From"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                AutomationId="FromEntry"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="From Location"
+                ReturnType="Next"
+                TabIndex="0"
+                Text="{Binding From}" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="Large"
+                Text="To"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                AutomationId="ToEntry"
+                ClearButtonVisibility="WhileEditing"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="To Location"
+                ReturnType="Next"
+                TabIndex="1"
+                Text="{Binding To}" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="1"
+                AutomationId="CalculateButton"
+                Command="{Binding CalculateCommand}"
+                CommandParameter="{x:Reference animatedTickerView}"
+                TabIndex="2"
+                Text="Calculate" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                AutomationId="ResultLabel"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor},
+                                                  Light={StaticResource PrimaryBackgroundColor}}"
+                FontSize="Large"
+                HorizontalOptions="FillAndExpand"
+                Text="{Binding Result}"
+                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor},
+                                            Light={StaticResource PrimaryTextColor}}" />
+
+            <lottie:AnimationView
+                x:Name="animatedTickerView"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Animation="resource://Resources.Animations.lottie_travel_ticker.json?assembly=TravelRefunds"
+                AnimationSource="EmbeddedResource"
+                AutoPlay="False"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor},
+                                                  Light={StaticResource PrimaryBackgroundColor}}"
+                HorizontalOptions="Center"
+                IsVisible="False"
+                OnFinishedAnimation="AnimatedTickerView_OnFinishedAnimation"
+                RepeatCount="0"
+                RepeatMode="Restart"
+                VerticalOptions="FillAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
