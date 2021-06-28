@@ -32,7 +32,7 @@ namespace TravelRefunds.Services
 
         public Task<TravelQuery> AddToTravelHistoryAsync(string start, string finish, DistanceUnit? distanceUnit, double? distance)
         {
-            var key = $"{start} - {finish}";
+            var key = ComputeKey(start, finish);
             var unit = distanceUnit ?? DistanceUnit.Kilometer;
             try
             {
@@ -52,7 +52,7 @@ namespace TravelRefunds.Services
 
         public async Task<string> GetTravelAsync(string start, string finish)
         {
-            var key = $"{start} - {finish}";
+            var key = ComputeKey(start, finish);
             // https://docs.microsoft.com/en-us/xamarin/essentials/connectivity?tabs=android#using-connectivity
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
@@ -77,5 +77,7 @@ namespace TravelRefunds.Services
             // Cache is not available and I have to add a new key.
             return "No internet connection available and no cached queries.";
         }
+
+        private string ComputeKey(string from, string to) => $"{from} - {to}";
     }
 }
