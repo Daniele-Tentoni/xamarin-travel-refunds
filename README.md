@@ -6,10 +6,11 @@ Application made with Xamarin.Forms.
 
 ## Features
 
-- [x] Embedded Fonts
-- [x] Travel Api: for travel refunds calculations
-- [x] Monkey Barrels caching: for storing recently calculated refunds
-- [x] Lottie Animations
+- [x] Embedded Fonts: awesome icons from Font Awesome.
+- [x] Travel Api: for travel refunds calculations.
+- [x] Monkey Barrels caching: store recently calculated refunds, retreiving them from History Page.
+- [x] Lottie Animations: fancy animations as Splashscreens and Calculator Job Done.
+- [x] Travel Queries History: you can retreive previous fetched travel for one day, after that time the request must be repeated from the Calculator Page.
 - [ ] Lazy load views
 - [ ] Microcharts reports
 - [ ] App Actions

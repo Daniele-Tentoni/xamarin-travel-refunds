@@ -54,10 +54,13 @@
                     What I've done in this application:
                     <ul>
                         <dt>Embedded Fonts with Font Awesome.</dt>
-                        <dd></dd>
-                        <li>Lottie Animations</li>
-                        <li>Travel Api: for travel refunds calculations</li>
-                        <li>Monkey Barrels caching: for storing recently calculated refunds</li>
+                        <dd>Awesome icons from Font Awesome.</dd>
+                        <dt>Travel Api</dt>
+                        <dd>Ask for travel distance to Bing services.</dd>
+                        <dt>Monkey Barrels</dt>
+                        <dd>Store recently calculated refunds. You can retreive them from History Page.</dd>
+                        <dt>Lottie Animations</dt>
+                        <dd>Fancy animations as Splashscreens and Calculator Job Done.</dd>
                     </ul>
                     ]]>
                 </Label>
@@ -71,9 +74,11 @@
                         <li>Lazy load views</li>
                         <li>Microcharts reports</li>
                         <li>App Actions</li>
-                        <liMaterial Design></li>
+                        <li>Material Design></li>
                         <li>Dark Theme support</li>
                         <li>Email report sharing</li>
+                        <li>String localization</li>
+                        <li>Textbox Accessibility</li>
                     </ul>
                     ]]>
                 </Label>
@@ -89,7 +94,7 @@
                     </Label.FormattedText>
                 </Label>
                 <Button
-                    Margin="0,10,0,0"
+                    Margin="0,8,0,0"
                     Command="{Binding OpenWebCommand}"
                     Text="Learn more">
                     <Button.ImageSource>

@@ -1,6 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 using Lottie.Forms;
 using MvvmHelpers;
+using Refit;
 using TravelRefunds.Services;
 using Xamarin.Forms;
 
@@ -53,16 +56,24 @@ namespace TravelRefunds.ViewModels
                 var res = await travelService.GetTravelAsync(From, To);
                 Result = res;
             }
+            catch (ApiException apiEx)
+            {
+                if (apiEx.StatusCode.Equals(HttpStatusCode.Unauthorized))
+                {
+                    await Device.InvokeOnMainThreadAsync(async () => await App.Current.MainPage.DisplayAlert("Accesso non autorizzato", "Rilevato accesso non autorizzato, verificare che le chiavi di accesso ai servizi web siano ancora valide.", "Bad..."));
+                }
+                else
+                {
+                    await Device.InvokeOnMainThreadAsync(async () => await App.Current.MainPage.DisplayAlert("Errore HTTP sconosciuto", $"Rilevato errore non riconosciuto: {apiEx.StatusCode} {apiEx.ReasonPhrase}", "Bad..."));
+                }
+            }
+            catch (Exception ex)
+            {
+                await Device.InvokeOnMainThreadAsync(async () => await App.Current.MainPage.DisplayAlert("Errore sconosciuto", $"Rilevato errore non riconosciuto: {ex.Message}", "Bad..."));
+            }
             finally
             {
                 IsBusy = false;
-                /*
-                 * Let the animation end.
-                 * if (animationView.IsVisible)
-                {
-                    animationView.StopAnimation();
-                    animationView.IsVisible = false;
-                }*/
             }
         }
     }
