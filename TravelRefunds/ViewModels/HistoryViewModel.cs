@@ -62,7 +62,7 @@ namespace TravelRefunds.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(CalculatorPage));
+            await Shell.Current.GoToAsync($"//{nameof(CalculatorPage)}");
         }
 
         public TravelQuery SelectedItem
