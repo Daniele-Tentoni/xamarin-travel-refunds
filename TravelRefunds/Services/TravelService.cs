@@ -26,6 +26,7 @@ namespace TravelRefunds.Services
             {
                 var keys = Barrel.Current.GetKeys(MonkeyCache.CacheState.Active);
                 var queries = keys.Select(s => Barrel.Current.Get<TravelQuery>(s));
+                var ordered = queries.OrderByDescending(o => o.RequestTime);
                 return queries;
             });
         }
@@ -38,7 +39,7 @@ namespace TravelRefunds.Services
             {
                 return Task.Run(() =>
                 {
-                    var query = new TravelQuery { From = start, To = finish, DistanceUnit = unit, Distance = distance };
+                    var query = new TravelQuery { From = start, To = finish, DistanceUnit = unit, Distance = distance, RequestTime = DateTime.Now };
                     Barrel.Current.Add(key, query, expireIn: TimeSpan.FromDays(1));
                     return query;
                 });
