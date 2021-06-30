@@ -113,9 +113,9 @@
                     // TODO: Concat location.
                     route = e.AppAction.Id switch
                     {
-                        "calculate_from" => "CalculatorPage?From=Cesena",
-                        "calculate_to" => "CalculatorPage?To=Pesaro",
-                        _ => "HistoryPage"
+                        "calculate_from" => $"{nameof(CalculatorPage)}?From={placemark.Locality}",
+                        "calculate_to" => $"{nameof(CalculatorPage)}?To={placemark.Locality}",
+                        _ => nameof(HistoryPage)
                     };
                 }
             }
