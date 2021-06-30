@@ -11,16 +11,18 @@ Application made with Xamarin.Forms.
 - [x] Monkey Barrels caching: store recently calculated refunds, retreiving them from History Page.
 - [x] Lottie Animations: fancy animations as Splashscreens and Calculator Job Done.
 - [x] Travel Queries History: you can retreive previous fetched travel for one day, after that time the request must be repeated from the Calculator Page.
+- [x] App Actions
+    - [x] For calculator
+    - [x] For history
 - [ ] Lazy load views
 - [ ] Microcharts reports
-- [ ] App Actions
-    - [ ] For calculator
-    - [ ] For history
 - [ ] Material Design
 - [ ] Dark Theme support
 - [ ] Email report sharing
 - [ ] String localization
 - [ ] Textbox Accessibility
+- [ ] Add Vehicole info
+- [ ] Add many Vehicole info
 
 ### Info
 

@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>Daniele Tentoni</Authors>
+    <Description>Calculate Travel Refunds.</Description>
+    <Copyright>Daniele Tentoni, @ 2021</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

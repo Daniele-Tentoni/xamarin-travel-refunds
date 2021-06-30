@@ -9,6 +9,8 @@ using Xamarin.Forms;
 
 namespace TravelRefunds.ViewModels
 {
+    [QueryProperty(nameof(From), nameof(From))]
+    [QueryProperty(nameof(To), nameof(To))]
     public class CalculatorViewModel : BaseViewModel
     {
         private readonly TravelService travelService = DependencyService.Get<TravelService>();
@@ -40,8 +42,8 @@ namespace TravelRefunds.ViewModels
         {
             Title = "Calculator";
             CalculateCommand = new Command<AnimationView>(async (animationView) => await ExecuteCalculate(animationView));
-            From = "Seattle";
-            To = "Kirkland";
+            // From = "Seattle";
+            // To = "Kirkland";
         }
 
         private async Task ExecuteCalculate(AnimationView animationView)
