@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using Lottie.Forms;
 using MvvmHelpers;
 using Refit;
+using TravelRefunds.Resources.Localization;
 using TravelRefunds.Services;
+using Xamarin.CommunityToolkit.Helpers;
 using Xamarin.Forms;
 
 namespace TravelRefunds.ViewModels
@@ -35,6 +37,11 @@ namespace TravelRefunds.ViewModels
             get => _result;
             set => SetProperty(ref _result, value);
         }
+
+        #region View LocalizedStrings
+        public LocalizedString CalculateText { get; } = new(() => AppStrings.Calculate);
+        public LocalizedString FromLocationPlaceholderText { get; } = new(() => AppStrings.FromLocation);
+        #endregion
 
         public Command CalculateCommand { get; set; }
 

@@ -10,6 +10,8 @@
     using TravelRefunds.Views;
     using Xamarin.CommunityToolkit.Extensions;
     using System.Linq;
+    using Xamarin.CommunityToolkit.Helpers;
+    using TravelRefunds.Resources.Localization;
 
     public partial class App : Application
     {
@@ -22,6 +24,9 @@
 
             DependencyService.Register<TravelService>();
             // DependencyService.Register<MockDataStore>();
+
+            LocalizationResourceManager.Current.PropertyChanged += (_, _) => AppStrings.Culture = LocalizationResourceManager.Current.CurrentCulture;
+            LocalizationResourceManager.Current.Init(AppStrings.ResourceManager);
 
             try
             {
@@ -44,9 +49,9 @@
             try
             {
                 await AppActions.SetAsync(
-                    new AppAction("calculate_from", "Calculate From", "Calculate distance from where you are now.", FontAwesomeIcons.Calculator),
-                    new AppAction("calculate_to", "Calculate To", "Calculate distance to where you are now.", FontAwesomeIcons.Calculator),
-                    new AppAction("app_info", "About", "Get application info", FontAwesomeIcons.Calculator));
+                    new AppAction("calculate_from", "Calculate From", "Calculate distance from where you are now.", "calculator_solid.png"),
+                    new AppAction("calculate_to", "Calculate To", "Calculate distance to where you are now.", "calculator_solid.png"),
+                    new AppAction("app_info", "About", "Get application info", "calculator_solid.png"));
             }
             catch (FeatureNotSupportedException ex)
             {

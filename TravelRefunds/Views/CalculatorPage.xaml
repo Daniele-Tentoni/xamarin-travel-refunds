@@ -27,7 +27,7 @@
                 Grid.ColumnSpan="2"
                 AutomationId="FromEntry"
                 HorizontalOptions="FillAndExpand"
-                Placeholder="From Location"
+                Placeholder="{Binding FromLocationPlaceholderText.Localized}"
                 ReturnType="Next"
                 TabIndex="0"
                 Text="{Binding From}" />
@@ -55,7 +55,7 @@
                 Command="{Binding CalculateCommand}"
                 CommandParameter="{x:Reference animatedTickerView}"
                 TabIndex="2"
-                Text="Calculate" />
+                Text="{Binding CalculateText.Localized}" />
 
             <Label
                 Grid.Row="3"

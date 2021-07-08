@@ -71,14 +71,14 @@
                     <![CDATA[
                     What I'm planning to add in this application:
                     <ul>
-                        <li>Lazy load views</li>
-                        <li>Microcharts reports</li>
-                        <li>App Actions</li>
-                        <li>Material Design></li>
-                        <li>Dark Theme support</li>
-                        <li>Email report sharing</li>
-                        <li>String localization</li>
-                        <li>Textbox Accessibility</li>
+                        <dt>Lazy load views</dt>
+                        <dt>Microcharts reports</dt>
+                        <dt>App Actions</dt>
+                        <dt>Material Design></dt>
+                        <dt>Dark Theme support</dt>
+                        <dt>Email report sharing</dt>
+                        <dt>String localization</dt>
+                        <dt>Textbox Accessibility</dt>
                     </ul>
                     ]]>
                 </Label>
@@ -98,7 +98,11 @@
                     Command="{Binding OpenWebCommand}"
                     Text="Learn more">
                     <Button.ImageSource>
-                        <FontImageSource FontFamily="fab" Glyph="{x:Static fa:FontAwesomeIcons.Github}" />
+                        <FontImageSource
+                            FontFamily="fab"
+                            Glyph="{x:Static fa:FontAwesomeIcons.Github}"
+                            Color="{AppThemeBinding Dark={StaticResource DarkTextOnPrimaryColor},
+                                                    Default={StaticResource TextOnPrimaryColor}}" />
                     </Button.ImageSource>
                 </Button>
             </StackLayout>
