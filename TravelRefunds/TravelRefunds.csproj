@@ -22,7 +22,7 @@
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
     <PackageReference Include="MonkeyCache" Version="1.5.2" />
     <PackageReference Include="MonkeyCache.SQLite" Version="1.5.2" />
-    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
     <PackageReference Include="Refit" Version="6.0.38" />
   </ItemGroup>
   <ItemGroup>
