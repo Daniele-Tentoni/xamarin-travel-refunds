@@ -16,7 +16,7 @@ Application made with Xamarin.Forms.
     - [x] For history
 - [ ] Lazy load views
 - [ ] Microcharts reports
-- [ ] Material Design
+- [x] Material Design
 - [ ] Dark Theme support
 - [ ] Email report sharing
 - [ ] String localization
