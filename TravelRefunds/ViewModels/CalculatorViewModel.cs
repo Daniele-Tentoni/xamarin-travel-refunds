@@ -1,16 +1,14 @@
-﻿using System;
-using System.Net;
-using System.Threading.Tasks;
-using Lottie.Forms;
-using MvvmHelpers;
-using Refit;
-using TravelRefunds.Resources.Localization;
-using TravelRefunds.Services;
-using Xamarin.CommunityToolkit.Helpers;
-using Xamarin.Forms;
-
-namespace TravelRefunds.ViewModels
+﻿namespace TravelRefunds.ViewModels
 {
+    using System;
+    using System.Net;
+    using System.Threading.Tasks;
+    using Lottie.Forms;
+    using MvvmHelpers;
+    using Refit;
+    using TravelRefunds.Services;
+    using Xamarin.Forms;
+
     [QueryProperty(nameof(From), nameof(From))]
     [QueryProperty(nameof(To), nameof(To))]
     public class CalculatorViewModel : BaseViewModel
@@ -49,8 +47,6 @@ namespace TravelRefunds.ViewModels
         {
             Title = "Calculator";
             CalculateCommand = new Command<AnimationView>(async (animationView) => await ExecuteCalculate(animationView));
-            // From = "Seattle";
-            // To = "Kirkland";
         }
 
         private async Task ExecuteCalculate(AnimationView animationView)
@@ -69,16 +65,20 @@ namespace TravelRefunds.ViewModels
             {
                 if (apiEx.StatusCode.Equals(HttpStatusCode.Unauthorized))
                 {
-                    await Device.InvokeOnMainThreadAsync(async () => await App.Current.MainPage.DisplayAlert("Accesso non autorizzato", "Rilevato accesso non autorizzato, verificare che le chiavi di accesso ai servizi web siano ancora valide.", "Bad..."));
+                    await Device.InvokeOnMainThreadAsync(async () => await Application.Current.MainPage.DisplayAlert("Accesso non autorizzato", "Rilevato accesso non autorizzato, verificare che le chiavi di accesso ai servizi web siano ancora valide.", "Bad..."));
+                }
+                else if (apiEx.StatusCode.Equals(HttpStatusCode.NotFound))
+                {
+                    await Device.InvokeOnMainThreadAsync(async () => await Application.Current.MainPage.DisplayAlert("Destinazione non trovata", "Uno o più località non sono state trovate, verificare che i dati inseriti siano corretti.", "Bad..."));
                 }
                 else
                 {
-                    await Device.InvokeOnMainThreadAsync(async () => await App.Current.MainPage.DisplayAlert("Errore HTTP sconosciuto", $"Rilevato errore non riconosciuto: {apiEx.StatusCode} {apiEx.ReasonPhrase}", "Bad..."));
+                    await Device.InvokeOnMainThreadAsync(async () => await Application.Current.MainPage.DisplayAlert("Errore HTTP sconosciuto", $"Rilevato errore non riconosciuto: {apiEx.StatusCode} {apiEx.ReasonPhrase}", "Bad..."));
                 }
             }
             catch (Exception ex)
             {
-                await Device.InvokeOnMainThreadAsync(async () => await App.Current.MainPage.DisplayAlert("Errore sconosciuto", $"Rilevato errore non riconosciuto: {ex.Message}", "Bad..."));
+                await Device.InvokeOnMainThreadAsync(async () => await Application.Current.MainPage.DisplayAlert("Errore sconosciuto", $"Rilevato errore non riconosciuto: {ex.Message}", "Bad..."));
             }
             finally
             {

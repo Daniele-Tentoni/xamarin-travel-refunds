@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using MonkeyCache.SQLite;
-using Refit;
-using TravelRefunds.Models;
-using Xamarin.Essentials;
-
-namespace TravelRefunds.Services
+﻿namespace TravelRefunds.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using MonkeyCache.SQLite;
+    using Refit;
+    using TravelRefunds.Models;
+    using Xamarin.Essentials;
+
     interface ITravelApi
     {
         [Get("/REST/V1/Routes/Driving?wp.0={from}&wp.1={to}&avoid=minimizeTolls&key={bingMapsKey}")]
@@ -65,7 +65,7 @@ namespace TravelRefunds.Services
                 var res = set.resources.FirstOrDefault();
                 var unit = (DistanceUnit)Enum.Parse(typeof(DistanceUnit), res.distanceUnit);
                 var dis = res?.travelDistance;
-                var query = await AddToTravelHistoryAsync(start, finish, unit, dis);
+                _ = await AddToTravelHistoryAsync(start, finish, unit, dis);
                 return $"{res.travelDistance} {res.distanceUnit}";
             }
 

@@ -6,6 +6,8 @@
     <Authors>Daniele Tentoni</Authors>
     <Description>Calculate Travel Refunds.</Description>
     <Copyright>Daniele Tentoni, @ 2021</Copyright>
+    <RepositoryUrl>https://github.com/Daniele-Tentoni/xamarin-travel-refunds</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Daniele-Tentoni/xamarin-travel-refunds</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<LangVersion>9.0</LangVersion>
