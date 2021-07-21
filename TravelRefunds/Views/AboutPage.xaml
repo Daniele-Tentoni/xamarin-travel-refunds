@@ -31,11 +31,11 @@
                 Padding="30,24,30,24"
                 Orientation="Vertical"
                 Spacing="10">
-                <Label FontSize="Title" Text="{Binding AboutPresentationTitle}" />
+                <Label FontSize="Title" Text="{Binding AboutPresentationTitle.Localized}" />
                 <Label
                     Padding="0,0,0,0"
                     FontSize="16"
-                    Text="{Binding AboutPresentationText}" />
+                    Text="{Binding AboutPresentationText.Localized}" />
                 <Label
                     Padding="0,24,0,0"
                     FontSize="16"

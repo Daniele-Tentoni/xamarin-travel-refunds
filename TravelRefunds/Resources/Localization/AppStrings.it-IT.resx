@@ -126,7 +126,10 @@
   <data name="Calculate" xml:space="preserve">
     <value>Calcola</value>
   </data>
-  <data name="FromLocation" xml:space="preserve">
+  <data name="CalculateFromLocation" xml:space="preserve">
     <value>Da località</value>
+  </data>
+  <data name="CalculateToLocation" xml:space="preserve">
+    <value>A località</value>
   </data>
 </root>

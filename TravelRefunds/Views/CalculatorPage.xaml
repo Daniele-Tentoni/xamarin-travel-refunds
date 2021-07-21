@@ -44,7 +44,7 @@
                 AutomationId="ToEntry"
                 ClearButtonVisibility="WhileEditing"
                 HorizontalOptions="FillAndExpand"
-                Placeholder="To Location"
+                Placeholder="{Binding ToLocationPlaceholderText.Localized}"
                 ReturnType="Next"
                 TabIndex="1"
                 Text="{Binding To}" />

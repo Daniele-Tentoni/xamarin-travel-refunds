@@ -40,7 +40,8 @@
 
         #region View LocalizedStrings
         public LocalizedString CalculateText { get; } = new(() => AppStrings.Calculate);
-        public LocalizedString FromLocationPlaceholderText { get; } = new(() => AppStrings.FromLocation);
+        public LocalizedString FromLocationPlaceholderText { get; } = new(() => AppStrings.CalculateFromLocation);
+        public LocalizedString ToLocationPlaceholderText { get; } = new(() => AppStrings.CalculateToLocation);
         #endregion
 
         public Command CalculateCommand { get; set; }

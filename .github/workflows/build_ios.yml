@@ -1,3 +1,5 @@
+# Read some articles first: https://damienaicheh.github.io/xamarin/github/actions/2021/07/15/manage-mobile-version-github-actions-en.html?utm_campaign=Weekly%2BXamarin&utm_medium=email&utm_source=Weekly_Xamarin_312
+
 name: Build Xamarin.iOS app
 
 on: [push]

@@ -9,19 +9,47 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <Color x:Key="PrimaryColor">#2196F3</Color>
-            <Color x:Key="PrimaryDisabledColor">#332196F3</Color>
-            <Color x:Key="PrimaryAccentColor">#96d1ff</Color>
+            <!--
+                Color Scheme available:
+                1. Primary
+                2. Accent
+
+                Each ColorScheme can have those Roles:
+                1. Foreground
+                2. Background
+                3. TextOnBackground
+
+                Each Role can have those states:
+                1. Enabled (or Default)
+                2. Disabled
+                3. Selected
+                4. Hover
+
+                Try to retreive colors from: https://material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=2196F3&secondary.color=96d1ff&primary.text.color=E2E2E2&secondary.text.color=000000
+
+                <resources>
+                    <color name="primaryLightColor">#6ec5ff</color>
+                    <color name="secondaryLightColor">#caffff</color>
+                </resources>
+
+                I've to read this article before implement dark theme: https://blog.superhuman.com/how-to-design-delightful-dark-themes/?utm_campaign=Weekly%2BXamarin&utm_medium=email&utm_source=Weekly_Xamarin_312
+            -->
+
+            <Color x:Key="PrimaryColor">#2195F2</Color>
+            <Color x:Key="PrimaryDisabledColor">#332195F2</Color>
+            <Color x:Key="PrimaryAccentColor">#96D1FF</Color>
             <Color x:Key="PrimaryTextColor">Black</Color>
             <Color x:Key="PrimaryBackgroundColor">White</Color>
-            <Color x:Key="SecondaryColor">#2196F3</Color>
             <Color x:Key="TextOnPrimaryColor">White</Color>
+            <Color x:Key="TextOnAccentColor">#212121</Color>
 
-            <Color x:Key="DarkPrimaryColor">#121212</Color>
+            <Color x:Key="DarkPrimaryColor">#0068bf</Color>
             <Color x:Key="DarkPrimaryDisabledColor">#33121212</Color>
+            <Color x:Key="DarkPrimaryAccentColor">#63A0CC</Color>
             <Color x:Key="DarkPrimaryTextColor">White</Color>
             <Color x:Key="DarkPrimaryBackgroundColor">#424242</Color>
             <Color x:Key="DarkTextOnPrimaryColor">White</Color>
+            <Color x:Key="DarkTextOnAccentColor">#FFF</Color>
 
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor}, Light={StaticResource PrimaryTextColor}}" />
