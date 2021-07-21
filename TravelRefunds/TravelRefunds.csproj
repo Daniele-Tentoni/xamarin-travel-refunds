@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Version>0.1.0</Version>
+    <LangVersion>9.0</LangVersion>
     <Authors>Daniele Tentoni</Authors>
     <Description>Calculate Travel Refunds.</Description>
     <Copyright>Daniele Tentoni, @ 2021</Copyright>
@@ -10,10 +11,10 @@
     <PackageProjectUrl>https://github.com/Daniele-Tentoni/xamarin-travel-refunds</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<LangVersion>9.0</LangVersion>
+    <!--<LangVersion>9.0</LangVersion>-->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<LangVersion>9.0</LangVersion>
+    <!--<LangVersion>9.0</LangVersion>-->
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.0.10" />
@@ -27,12 +28,12 @@
     <PackageReference Include="Refit" Version="6.0.38" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Resources\Fonts\fa-brands-400.ttf" />
-    <None Remove="Resources\Fonts\fa-regular-400.ttf" />
-    <None Remove="Resources\Fonts\fa-solid-900.ttf" />
-    <None Remove="Resources\Animations\lottie_travel_ticker.json" />
-    <None Remove="Resources\Animations\lottie_refunds_splashscreen.json" />
-		<None Remove="Resources\Localization\" />
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Localization\AppStrings.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\fa-brands-400.ttf" />
@@ -40,35 +41,20 @@
     <EmbeddedResource Include="Resources\Fonts\fa-solid-900.ttf" />
     <EmbeddedResource Include="Resources\Animations\lottie_travel_ticker.json" />
     <EmbeddedResource Include="Resources\Animations\lottie_refunds_splashscreen.json" />
+    <EmbeddedResource Include="Resources\Localization\AppStrings.it-IT.resx" />
+    <EmbeddedResource Include="Resources\Localization\AppStrings.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Animations\" />
-		<Folder Include="Resources\Localization\" />
-	</ItemGroup>
-	<ItemGroup>
-		<EmbeddedResource Update="Resources\Localization\AppStrings.resx">
-			<Generator>PublicResXFileCodeGenerator</Generator>
-			<LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\Localization\AppStrings.it.resx">
-			<Generator>PublicResXFileCodeGenerator</Generator>
-			<DependentUpon>AppStrings.resx</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\Localization\AppStrings.en.resx">
-			<Generator>PublicResXFileCodeGenerator</Generator>
-			<DependentUpon>AppStrings.resx</DependentUpon>
-		</EmbeddedResource>
-	<ItemGroup>
-		<Compile Update="Resources\Localization\AppStrings.Designer.cs">
-			<DependentUpon>AppStrings.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-		</Compile>
-		<Compile Update="Resources\Localization\AppStrings.en-US.Designer.cs">
-		  <DependentUpon>AppStrings.en-US.resx</DependentUpon>
-		</Compile>
-		<Compile Update="Resources\Localization\AppStrings.it-IT.Designer.cs">
-		  <DependentUpon>AppStrings.it-IT.resx</DependentUpon>
-		</Compile>
+    <EmbeddedResource Update="Resources\Localization\AppStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Localization\AppStrings.Designer.cs">
+      <DependentUpon>AppStrings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
 </Project>

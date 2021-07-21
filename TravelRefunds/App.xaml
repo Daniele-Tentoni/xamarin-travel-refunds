@@ -10,12 +10,15 @@
         <ResourceDictionary>
 
             <Color x:Key="PrimaryColor">#2196F3</Color>
+            <Color x:Key="PrimaryDisabledColor">#332196F3</Color>
+            <Color x:Key="PrimaryAccentColor">#96d1ff</Color>
             <Color x:Key="PrimaryTextColor">Black</Color>
             <Color x:Key="PrimaryBackgroundColor">White</Color>
             <Color x:Key="SecondaryColor">#2196F3</Color>
             <Color x:Key="TextOnPrimaryColor">White</Color>
 
             <Color x:Key="DarkPrimaryColor">#121212</Color>
+            <Color x:Key="DarkPrimaryDisabledColor">#33121212</Color>
             <Color x:Key="DarkPrimaryTextColor">White</Color>
             <Color x:Key="DarkPrimaryBackgroundColor">#424242</Color>
             <Color x:Key="DarkTextOnPrimaryColor">White</Color>
@@ -33,7 +36,7 @@
                             </VisualState>
                             <VisualState x:Name="Disabled">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PrimaryDisabledColor}, Dark={StaticResource DarkPrimaryDisabledColor}}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>

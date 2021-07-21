@@ -6,7 +6,9 @@
     using Lottie.Forms;
     using MvvmHelpers;
     using Refit;
+    using TravelRefunds.Resources.Localization;
     using TravelRefunds.Services;
+    using Xamarin.CommunityToolkit.Helpers;
     using Xamarin.Forms;
 
     [QueryProperty(nameof(From), nameof(From))]
@@ -58,6 +60,7 @@
                 animationView.PlayAnimation();
                 animationView.IsVisible = true;
                 // https://api.geoapify.com/v1/routing?waypoints=44.136352,12.2422442|43.9098114,12.9131228&mode=drive&lang=it&apiKey=YOUR_API_KEY
+                
                 var res = await travelService.GetTravelAsync(From, To);
                 Result = res;
             }

@@ -1,8 +1,8 @@
-﻿using TravelRefunds.ViewModels;
-using Xamarin.Forms;
-
-namespace TravelRefunds.Views
+﻿namespace TravelRefunds.Views
 {
+    using TravelRefunds.ViewModels;
+    using Xamarin.Forms;
+
     public partial class HistoryPage : ContentPage
     {
         HistoryViewModel _viewModel;

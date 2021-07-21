@@ -9,16 +9,10 @@
     x:DataType="vm:AboutViewModel"
     Visual="Material">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <ScrollView>
         <StackLayout>
             <StackLayout
-                BackgroundColor="{StaticResource Accent}"
+                BackgroundColor="{StaticResource PrimaryAccentColor}"
                 HorizontalOptions="Fill"
                 VerticalOptions="FillAndExpand">
                 <StackLayout
@@ -37,27 +31,37 @@
                 Padding="30,24,30,24"
                 Orientation="Vertical"
                 Spacing="10">
-                <Label FontSize="Title" Text="Curriculum application" />
+                <Label FontSize="Title" Text="{Binding AboutPresentationTitle}" />
                 <Label
                     Padding="0,0,0,0"
                     FontSize="16"
-                    Text="I'm Daniele Tentoni, enthusiast with Xamarin.Forms doing this application as a curriculum app to show what things I can do with this awesome framework." />
+                    Text="{Binding AboutPresentationText}" />
+                <Label
+                    Padding="0,24,0,0"
+                    FontSize="16"
+                    Text="What I've implemented in this application:" />
+                <Label
+                    Padding="0,0,0,0"
+                    FontSize="16"
+                    Text="Embedded Fonts:" />
+                <Label
+                    Padding="24,-4,0,0"
+                    FontSize="16"
+                    Text="Awesome icons from Font Awesome." />
                 <Label
                     Padding="0,16,0,0"
                     FontSize="16"
                     TextType="Html">
                     <![CDATA[
-                    What I've done in this application:
-                    <ul>
-                        <dt>Embedded Fonts with Font Awesome.</dt>
-                        <dd>Awesome icons from Font Awesome.</dd>
+                    Also:
+                    <dl>
                         <dt>Travel Api</dt>
                         <dd>Ask for travel distance to Bing services.</dd>
                         <dt>Monkey Barrels</dt>
                         <dd>Store recently calculated refunds. You can retreive them from History Page.</dd>
                         <dt>Lottie Animations</dt>
                         <dd>Fancy animations as Splashscreens and Calculator Job Done.</dd>
-                    </ul>
+                    </dl>
                     ]]>
                 </Label>
                 <Label
@@ -66,7 +70,7 @@
                     TextType="Html">
                     <![CDATA[
                     What I'm planning to add in this application:
-                    <ul>
+                    <dl>
                         <dt>Lazy load views</dt>
                         <dt>Microcharts reports</dt>
                         <dt>App Actions</dt>
@@ -75,7 +79,7 @@
                         <dt>Email report sharing</dt>
                         <dt>String localization</dt>
                         <dt>Textbox Accessibility</dt>
-                    </ul>
+                    </dl>
                     ]]>
                 </Label>
                 <Label Padding="0,24,0,0" FontSize="16">
