@@ -13,8 +13,8 @@
                 Animation="resource://Resources.Animations.lottie_refunds_splashscreen.json?assembly=TravelRefunds"
                 AnimationSource="EmbeddedResource"
                 AutoPlay="True"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor},
-                                                  Light={StaticResource PrimaryBackgroundColor}}"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                                  Light={StaticResource LightBackground}}"
                 HorizontalOptions="FillAndExpand"
                 OnFinishedAnimation="AnimationView_OnFinishedAnimation"
                 VerticalOptions="FillAndExpand" />

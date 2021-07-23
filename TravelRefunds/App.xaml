@@ -35,6 +35,8 @@
                 I've to read this article before implement dark theme: https://blog.superhuman.com/how-to-design-delightful-dark-themes/?utm_campaign=Weekly%2BXamarin&utm_medium=email&utm_source=Weekly_Xamarin_312
             -->
 
+            <!--
+                Light theme
             <Color x:Key="PrimaryColor">#2195F2</Color>
             <Color x:Key="PrimaryDisabledColor">#332195F2</Color>
             <Color x:Key="PrimaryAccentColor">#96D1FF</Color>
@@ -42,7 +44,38 @@
             <Color x:Key="PrimaryBackgroundColor">White</Color>
             <Color x:Key="TextOnPrimaryColor">White</Color>
             <Color x:Key="TextOnAccentColor">#212121</Color>
+            -->
 
+            <Color x:Key="LightText">#000000</Color>
+            <Color x:Key="LightPrimaryText">#DE000000</Color>
+            <Color x:Key="LightAccentText">#8A000000</Color>
+            <Color x:Key="LightDisabledText">#61000000</Color>
+            <Color x:Key="LightDividers">#1F000000</Color>
+            <Color x:Key="LightFocused">#1F000000</Color>
+
+            <Color x:Key="LightBackground">#FAFAFA</Color>
+            <Color x:Key="LightBackgroundDarker5">#EDEDED</Color>
+            <Color x:Key="LightBackgroundDarker10">#E1E1E1</Color>
+            <Color x:Key="LightBackgroundDarker20">#C7C7C7</Color>
+            <Color x:Key="LightBackgroundDarker30">#AEAEAE</Color>
+            <Color x:Key="LightBackgroundLighter5">#FFFFFF</Color>
+            <Color x:Key="LightPrimaryColor">#2195F2</Color>
+            <Color x:Key="LightPrimaryLighterColor">#BCDFFB</Color>
+            <Color x:Key="LightPrimaryDarkerColor">#1478EC</Color>
+            <!--
+                // Background config
+                // Light bg
+                $light-bg-lighter-5:  lighten($light-background, 5%);
+                $dark-bg-tooltip:     lighten(#2c2c2c, 20%);
+                $dark-bg-alpha-4:     rgba(#2c2c2c, 0.04);
+                $dark-bg-alpha-12:    rgba(#2c2c2c, 0.12);
+                text-primary-color: #{$light-primary-text};
+                text-primary-lighter-color: #{$dark-primary-text};
+                text-primary-darker-color: #{$light-primary-text};
+            -->
+
+            <!--
+                Dark theme
             <Color x:Key="DarkPrimaryColor">#0068bf</Color>
             <Color x:Key="DarkPrimaryDisabledColor">#33121212</Color>
             <Color x:Key="DarkPrimaryAccentColor">#63A0CC</Color>
@@ -50,21 +83,54 @@
             <Color x:Key="DarkPrimaryBackgroundColor">#424242</Color>
             <Color x:Key="DarkTextOnPrimaryColor">White</Color>
             <Color x:Key="DarkTextOnAccentColor">#FFF</Color>
+            -->
+
+            <Color x:Key="DarkText">#FFF</Color>
+            <Color x:Key="DarkPrimaryText">#FFF</Color>
+            <Color x:Key="DarkAccentText">#B3FFFFFF</Color>
+            <Color x:Key="DarkDisabledText">#80FFFFFF</Color>
+            <Color x:Key="DarkDividers">#1FFFFFFF</Color>
+            <Color x:Key="DarkFocused">#1FFFFFFF</Color>
+
+            <Color x:Key="DarkBackground">#2C2C2C</Color>
+            <Color x:Key="DarkBackgroundLighter5">#393939</Color>
+            <Color x:Key="DarkPrimaryColor">#2195F2</Color>
+            <Color x:Key="DarkPrimaryLighterColor">#BCDFFB</Color>
+            <Color x:Key="DarkPrimaryDarkerColor">#1478EC</Color>
+
+            <!--
+                Accent Color
+            -->
+            <Color x:Key="AccentColor">#96D1FF</Color>
+            <Color x:Key="AccentLighterColor">#E0F1FF</Color>
+            <Color x:Key="AccentDarkerColor">#79C0FF</Color>
+
+            <!--
+                // Dark bg
+                $dark-bg-lighter-10:  lighten($dark-background, 10%);
+                $dark-bg-lighter-20:  lighten($dark-background, 20%);
+                $dark-bg-lighter-30:  lighten($dark-background, 30%);
+                $light-bg-alpha-4:    rgba(#fafafa, 0.04);
+                $light-bg-alpha-12:   rgba(#fafafa, 0.12);
+                text-accent-color: #{$dark-primary-text};
+                text-accent-lighter-color: #{$dark-primary-text};
+                text-accent-darker-color: #{$dark-primary-text};
+            -->
 
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor}, Light={StaticResource PrimaryTextColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryText}, Light={StaticResource LightPrimaryText}}" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextOnPrimaryColor}, Dark={StaticResource DarkTextOnPrimaryColor}}" />
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackgroundDarker5}, Dark={StaticResource DarkBackgroundLighter5}}" />
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryText}, Dark={StaticResource DarkPrimaryText}}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PrimaryDisabledColor}, Dark={StaticResource DarkPrimaryDisabledColor}}" />
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryLighterColor}, Dark={StaticResource DarkPrimaryLighterColor}}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -73,11 +139,17 @@
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor}, Light={StaticResource PrimaryTextColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryText}, Light={StaticResource LightPrimaryText}}" />
             </Style>
 
-            <Style TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor}, Light={StaticResource PrimaryBackgroundColor}}" />
+            <Style TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryLighterColor}, Light={StaticResource LightPrimaryLighterColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryText}, Light={StaticResource LightPrimaryText}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackgroundLighter5}, Light={StaticResource LightBackgroundDarker5}}" />
+            </Style>
+
+            <Style x:Key="DefaultContentPage" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource LightBackground}}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

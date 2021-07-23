@@ -3,10 +3,13 @@
     x:Class="TravelRefunds.Views.HistoryPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:history="clr-namespace:TravelRefunds.Views.History"
     xmlns:local="clr-namespace:TravelRefunds.ViewModels"
     xmlns:model="clr-namespace:TravelRefunds.Models"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Title="{Binding Title}"
     x:DataType="local:HistoryViewModel"
+    Style="{StaticResource DefaultContentPage}"
     Visual="Material">
 
     <ContentPage.ToolbarItems>
@@ -55,5 +58,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </RefreshView>
+        <!--<xct:LazyView x:TypeArguments="history:InternalHistoryPage" />-->
     </ContentPage.Content>
 </ContentPage>

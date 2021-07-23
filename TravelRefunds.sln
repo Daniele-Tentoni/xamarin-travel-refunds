@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelRefunds.UITests", "Tr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3CA7CDF2-87DF-49D5-BC9B-36729F76874D}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build_android.yml = .github\workflows\build_android.yml
+		.github\workflows\build_ios.yml = .github\workflows\build_ios.yml
 		CHANGELOG.md = CHANGELOG.md
 		README.md = README.md
 	EndProjectSection

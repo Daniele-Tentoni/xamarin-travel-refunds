@@ -7,12 +7,14 @@
     xmlns:vm="clr-namespace:TravelRefunds.ViewModels"
     Title="{Binding Title}"
     x:DataType="vm:AboutViewModel"
+    Style="{StaticResource DefaultContentPage}"
     Visual="Material">
 
     <ScrollView>
         <StackLayout>
             <StackLayout
-                BackgroundColor="{StaticResource PrimaryAccentColor}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryLighterColor},
+                                                  Dark={StaticResource DarkPrimaryLighterColor}}"
                 HorizontalOptions="Fill"
                 VerticalOptions="FillAndExpand">
                 <StackLayout
@@ -34,52 +36,49 @@
                 <Label FontSize="Title" Text="{Binding AboutPresentationTitle.Localized}" />
                 <Label
                     Padding="0,0,0,0"
-                    FontSize="16"
+                    FontSize="Body"
                     Text="{Binding AboutPresentationText.Localized}" />
                 <Label
                     Padding="0,24,0,0"
-                    FontSize="16"
-                    Text="What I've implemented in this application:" />
-                <Label
-                    Padding="0,0,0,0"
-                    FontSize="16"
-                    Text="Embedded Fonts:" />
+                    FontSize="Large"
+                    Text="{Binding AboutPresentationTitle.Localized}" />
+                <Label FontSize="16" Text="What I've implemented in this application:" />
+                <Label FontSize="16" Text="Embedded Fonts" />
                 <Label
                     Padding="24,-4,0,0"
                     FontSize="16"
                     Text="Awesome icons from Font Awesome." />
+                <Label FontSize="16" Text="Travel Api" />
                 <Label
-                    Padding="0,16,0,0"
+                    Padding="24,-4,0,0"
                     FontSize="16"
-                    TextType="Html">
-                    <![CDATA[
-                    Also:
-                    <dl>
-                        <dt>Travel Api</dt>
-                        <dd>Ask for travel distance to Bing services.</dd>
-                        <dt>Monkey Barrels</dt>
-                        <dd>Store recently calculated refunds. You can retreive them from History Page.</dd>
-                        <dt>Lottie Animations</dt>
-                        <dd>Fancy animations as Splashscreens and Calculator Job Done.</dd>
-                    </dl>
-                    ]]>
-                </Label>
+                    Text="Ask for travel distance to Bing services." />
+                <Label FontSize="16" Text="Monkey Barrels" />
+                <Label
+                    Padding="24,-4,0,0"
+                    FontSize="16"
+                    Text="Store recently calculated refunds. You can retreive them from History Page." />
+                <Label FontSize="16" Text="Lottie Animations" />
+                <Label
+                    Padding="24,-4,0,0"
+                    FontSize="16"
+                    Text="Fancy animations as Splashscreens and Calculator Job Done." />
                 <Label
                     Padding="0,16,0,0"
                     FontSize="16"
                     TextType="Html">
                     <![CDATA[
                     What I'm planning to add in this application:
-                    <dl>
-                        <dt>Lazy load views</dt>
-                        <dt>Microcharts reports</dt>
-                        <dt>App Actions</dt>
-                        <dt>Material Design></dt>
-                        <dt>Dark Theme support</dt>
-                        <dt>Email report sharing</dt>
-                        <dt>String localization</dt>
-                        <dt>Textbox Accessibility</dt>
-                    </dl>
+                    <ol>
+                        <li>Lazy load views</li>
+                        <li>Microcharts reports</li>
+                        <li>App Actions</li>
+                        <li>Material Design></li>
+                        <li>Dark Theme support</li>
+                        <li>Email report sharing</li>
+                        <li>String localization</li>
+                        <li>Textbox Accessibility</li>
+                    </ol>
                     ]]>
                 </Label>
                 <Label Padding="0,24,0,0" FontSize="16">
@@ -101,8 +100,8 @@
                         <FontImageSource
                             FontFamily="fab"
                             Glyph="{x:Static fa:FontAwesomeIcons.Github}"
-                            Color="{AppThemeBinding Dark={StaticResource DarkTextOnPrimaryColor},
-                                                    Default={StaticResource TextOnPrimaryColor}}" />
+                            Color="{AppThemeBinding Dark={StaticResource DarkPrimaryText},
+                                                    Default={StaticResource LightPrimaryText}}" />
                     </Button.ImageSource>
                 </Button>
             </StackLayout>

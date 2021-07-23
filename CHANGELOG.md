@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - App Actions: can easly calculate from and to travel refunds
 
 ### Changed
+
+- History Lazy Loading: now the history page
 ### Deprecated
 ### Removed
 ### Fixed

@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using MvvmHelpers;
-using TravelRefunds.Models;
-using TravelRefunds.Services;
-using TravelRefunds.Views;
-using Xamarin.Forms;
-
-namespace TravelRefunds.ViewModels
+﻿namespace TravelRefunds.ViewModels
 {
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Diagnostics;
+    using System.Threading.Tasks;
+    using MvvmHelpers;
+    using TravelRefunds.Models;
+    using TravelRefunds.Services;
+    using TravelRefunds.Views;
+    using Xamarin.Forms;
+
     public class HistoryViewModel : BaseViewModel
     {
         private readonly TravelService travelService = DependencyService.Get<TravelService>();

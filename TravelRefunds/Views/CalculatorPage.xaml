@@ -7,7 +7,9 @@
     xmlns:viewModels="clr-namespace:TravelRefunds.ViewModels"
     Title="{Binding Title}"
     x:DataType="viewModels:CalculatorViewModel"
+    Style="{StaticResource DefaultContentPage}"
     Visual="Material">
+
     <ContentPage.Content>
         <Grid
             Margin="8"
@@ -26,6 +28,7 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 AutomationId="FromEntry"
+                ClearButtonVisibility="WhileEditing"
                 HorizontalOptions="FillAndExpand"
                 Placeholder="{Binding FromLocationPlaceholderText.Localized}"
                 ReturnType="Next"
@@ -62,13 +65,9 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 AutomationId="ResultLabel"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor},
-                                                  Light={StaticResource PrimaryBackgroundColor}}"
                 FontSize="Large"
                 HorizontalOptions="FillAndExpand"
-                Text="{Binding Result}"
-                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor},
-                                            Light={StaticResource PrimaryTextColor}}" />
+                Text="{Binding Result}" />
 
             <lottie:AnimationView
                 x:Name="animatedTickerView"
@@ -78,8 +77,6 @@
                 Animation="resource://Resources.Animations.lottie_travel_ticker.json?assembly=TravelRefunds"
                 AnimationSource="EmbeddedResource"
                 AutoPlay="False"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPrimaryBackgroundColor},
-                                                  Light={StaticResource PrimaryBackgroundColor}}"
                 HorizontalOptions="Center"
                 IsVisible="False"
                 OnFinishedAnimation="AnimatedTickerView_OnFinishedAnimation"
