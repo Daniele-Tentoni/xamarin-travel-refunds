@@ -20,7 +20,7 @@
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
-                FontSize="Large"
+                FontSize="Medium"
                 Text="From"
                 VerticalOptions="Center" />
             <Entry
@@ -37,7 +37,7 @@
             <Label
                 Grid.Row="1"
                 Grid.Column="0"
-                FontSize="Large"
+                FontSize="Medium"
                 Text="To"
                 VerticalOptions="Center" />
             <Entry
