@@ -10,15 +10,23 @@
     public class AboutViewModel : BaseViewModel
     {
         #region View LocalizedStrings
+        public LocalizedString AboutPageTitle { get; } = new(() => AppStrings.AboutPageTitle);
         public LocalizedString AboutPresentationTitle { get; } = new(() => AppStrings.AboutPresentationTitle);
         public LocalizedString AboutPresentationText { get; } = new(() => AppStrings.AboutPresentationText);
+        public LocalizedString LearnMore { get; } = new(() => AppStrings.LearnMore);
+        public LocalizedString SignalABug { get; } = new(() => AppStrings.SignalABug);
+        public LocalizedString WhatImplemented { get; } = new(() => AppStrings.WhatImplemented);
+        public LocalizedString AwesomeIcons { get; } = new(() => AppStrings.AwesomeIcons);
+        public LocalizedString TravelApiDesc { get; } = new(() => AppStrings.TravelApiDesc);
+        public LocalizedString MonkeyBarrelsDesc { get; } = new(() => AppStrings.MonkeyBarrelsDesc);
+        public LocalizedString LottieDesc { get; } = new(() => AppStrings.LottieDesc);
         #endregion
 
         public AboutViewModel()
         {
-            Title = "About";
+            Title = AboutPageTitle.Localized;
         }
 
-        public ICommand OpenWebCommand { get; } = new Command(async () => await Browser.OpenAsync("https://github.com/Daniele-Tentoni/xamarin-travel-refunds"));
+        public ICommand OpenWebCommand { get; } = new Command<string>(async (arg) => await Browser.OpenAsync(arg));
     }
 }

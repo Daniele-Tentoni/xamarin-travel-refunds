@@ -6,7 +6,13 @@
     xmlns:fa="clr-namespace:TravelRefunds.Helpers"
     xmlns:local="clr-namespace:TravelRefunds.Views"
     xmlns:main="clr-namespace:TravelRefunds"
-    Title="TravelRefunds">
+    xmlns:vm="clr-namespace:TravelRefunds.ViewModels"
+    Title="TravelRefunds"
+    x:DataType="vm:ShellViewModel">
+
+    <Shell.BindingContext>
+        <vm:ShellViewModel />
+    </Shell.BindingContext>
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -36,7 +42,7 @@
 
     <TabBar AutomationId="CalculatorTab">
         <ShellContent
-            Title="Calculator"
+            Title="{Binding Calculator.Localized}"
             AutomationId="CalculatorShellItem"
             ContentTemplate="{DataTemplate local:CalculatorPage}"
             Route="CalculatorPage">
@@ -45,14 +51,14 @@
             </ShellContent.Icon>
         </ShellContent>
         <ShellContent
-            Title="History"
+            Title="{Binding History.Localized}"
             ContentTemplate="{DataTemplate local:HistoryPage}"
             Route="HistoryPage">
             <ShellContent.Icon>
                 <FontImageSource FontFamily="fas" Glyph="{x:Static fa:FontAwesomeIcons.History}" />
             </ShellContent.Icon>
         </ShellContent>
-        <Tab Title="About" Route="AboutPage">
+        <Tab Title="{Binding About.Localized}" Route="AboutPage">
             <Tab.Icon>
                 <FontImageSource FontFamily="fas" Glyph="{x:Static fa:FontAwesomeIcons.Info}" />
             </Tab.Icon>

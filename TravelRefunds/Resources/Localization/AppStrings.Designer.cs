@@ -61,6 +61,15 @@ namespace TravelRefunds.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string AboutPageTitle {
+            get {
+                return ResourceManager.GetString("AboutPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I&apos;m Daniele Tentoni, enthusiast with Xamarin.Forms doing this application as a curriculum app to show what things I can do with this awesome framework..
         /// </summary>
         public static string AboutPresentationText {
@@ -75,6 +84,15 @@ namespace TravelRefunds.Resources.Localization {
         public static string AboutPresentationTitle {
             get {
                 return ResourceManager.GetString("AboutPresentationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awesome icons from Font Awesome..
+        /// </summary>
+        public static string AwesomeIcons {
+            get {
+                return ResourceManager.GetString("AwesomeIcons", resourceCulture);
             }
         }
         
@@ -102,6 +120,78 @@ namespace TravelRefunds.Resources.Localization {
         public static string CalculateToLocation {
             get {
                 return ResourceManager.GetString("CalculateToLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculator.
+        /// </summary>
+        public static string Calculator {
+            get {
+                return ResourceManager.GetString("Calculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string History {
+            get {
+                return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more.
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fancy animations as Splashscreens and Calculator Job Done..
+        /// </summary>
+        public static string LottieDesc {
+            get {
+                return ResourceManager.GetString("LottieDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Store recently calculated refunds. You can retreive them from History Page..
+        /// </summary>
+        public static string MonkeyBarrelsDesc {
+            get {
+                return ResourceManager.GetString("MonkeyBarrelsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Signal a Bug.
+        /// </summary>
+        public static string SignalABug {
+            get {
+                return ResourceManager.GetString("SignalABug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask for travel distance to Bing services..
+        /// </summary>
+        public static string TravelApiDesc {
+            get {
+                return ResourceManager.GetString("TravelApiDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What I&apos;ve implemented in this application:.
+        /// </summary>
+        public static string WhatImplemented {
+            get {
+                return ResourceManager.GetString("WhatImplemented", resourceCulture);
             }
         }
     }

@@ -42,27 +42,27 @@
                     Padding="0,24,0,0"
                     FontSize="Large"
                     Text="{Binding AboutPresentationTitle.Localized}" />
-                <Label FontSize="16" Text="What I've implemented in this application:" />
+                <Label FontSize="16" Text="{Binding WhatImplemented.Localized}" />
                 <Label FontSize="16" Text="Embedded Fonts" />
                 <Label
                     Padding="24,-4,0,0"
                     FontSize="16"
-                    Text="Awesome icons from Font Awesome." />
+                    Text="{Binding AwesomeIcons.Localized}" />
                 <Label FontSize="16" Text="Travel Api" />
                 <Label
                     Padding="24,-4,0,0"
                     FontSize="16"
-                    Text="Ask for travel distance to Bing services." />
+                    Text="{Binding TravelApiDesc.Localized}" />
                 <Label FontSize="16" Text="Monkey Barrels" />
                 <Label
                     Padding="24,-4,0,0"
                     FontSize="16"
-                    Text="Store recently calculated refunds. You can retreive them from History Page." />
+                    Text="{Binding MonkeyBarrelsDesc.Localized}" />
                 <Label FontSize="16" Text="Lottie Animations" />
                 <Label
                     Padding="24,-4,0,0"
                     FontSize="16"
-                    Text="Fancy animations as Splashscreens and Calculator Job Done." />
+                    Text="{Binding LottieDesc.Localized}" />
                 <Label
                     Padding="0,16,0,0"
                     FontSize="16"
@@ -95,7 +95,21 @@
                 <Button
                     Margin="0,8,0,0"
                     Command="{Binding OpenWebCommand}"
-                    Text="Learn more">
+                    CommandParameter="https://github.com/Daniele-Tentoni/xamarin-travel-refunds"
+                    Text="{Binding LearnMore.Localized}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            FontFamily="fab"
+                            Glyph="{x:Static fa:FontAwesomeIcons.Github}"
+                            Color="{AppThemeBinding Dark={StaticResource DarkPrimaryText},
+                                                    Default={StaticResource LightPrimaryText}}" />
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                    Margin="0,8,0,0"
+                    Command="{Binding OpenWebCommand}"
+                    CommandParameter="https://github.com/Daniele-Tentoni/xamarin-travel-refunds/issues"
+                    Text="{Binding SignalABug.Localized}">
                     <Button.ImageSource>
                         <FontImageSource
                             FontFamily="fab"

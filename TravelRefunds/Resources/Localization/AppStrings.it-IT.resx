@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>Informazioni</value>
+  </data>
   <data name="AboutPresentationText" xml:space="preserve">
     <value>Sono Daniele Tentoni, entusiasta con Xamarin.Forms crendo questa applicazione per il curriculum per mostrare quali cose riesco a fare con questo meraviglioso framework.</value>
   </data>
   <data name="AboutPresentationTitle" xml:space="preserve">
     <value>Applicazione da Curriculum</value>
+  </data>
+  <data name="AwesomeIcons" xml:space="preserve">
+    <value>Icone meravigliose da Font Awesome.</value>
   </data>
   <data name="Calculate" xml:space="preserve">
     <value>Calcola</value>
@@ -131,5 +137,29 @@
   </data>
   <data name="CalculateToLocation" xml:space="preserve">
     <value>A località</value>
+  </data>
+  <data name="Calculator" xml:space="preserve">
+    <value>Calcolatore</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Storico</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Scopri di più</value>
+  </data>
+  <data name="LottieDesc" xml:space="preserve">
+    <value>Animazioni simpatiche come Splashscreens e notifica di calcolo finito nel Calcolatore</value>
+  </data>
+  <data name="MonkeyBarrelsDesc" xml:space="preserve">
+    <value>Salviamo i recenti rimborsi salvati. Puoi recuperarli attraverso lo Storico.</value>
+  </data>
+  <data name="SignalABug" xml:space="preserve">
+    <value>Segnala un problema</value>
+  </data>
+  <data name="TravelApiDesc" xml:space="preserve">
+    <value>Chiediamo le distanze di viaggio ai servizi Bing.</value>
+  </data>
+  <data name="WhatImplemented" xml:space="preserve">
+    <value>Cosa ho implementato in questa applicazione:</value>
   </data>
 </root>

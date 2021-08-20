@@ -3,6 +3,7 @@
     x:Class="TravelRefunds.Views.CalculatorPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fa="clr-namespace:TravelRefunds.Helpers"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:viewModels="clr-namespace:TravelRefunds.ViewModels"
     Title="{Binding Title}"
@@ -11,17 +12,20 @@
     Visual="Material">
 
     <ContentPage.Content>
+
         <Grid
-            Margin="8"
-            ColumnDefinitions="*, 2*, *"
-            ColumnSpacing="4"
+            Margin="16"
+            ColumnDefinitions="Auto, 2*, *"
+            ColumnSpacing="16"
             RowDefinitions="Auto, Auto, Auto, Auto, *"
-            RowSpacing="4">
+            RowSpacing="16">
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
+                Margin="0,0,16,0"
+                FontFamily="fas"
                 FontSize="Medium"
-                Text="From"
+                Text="{x:Static fa:FontAwesomeIcons.PlaneDeparture}"
                 VerticalOptions="Center" />
             <Entry
                 Grid.Row="0"
@@ -37,8 +41,10 @@
             <Label
                 Grid.Row="1"
                 Grid.Column="0"
+                Margin="0,0,16,0"
+                FontFamily="fas"
                 FontSize="Medium"
-                Text="To"
+                Text="{x:Static fa:FontAwesomeIcons.PlaneArrival}"
                 VerticalOptions="Center" />
             <Entry
                 Grid.Row="1"

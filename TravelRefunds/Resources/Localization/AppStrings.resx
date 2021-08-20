@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="AboutPresentationText" xml:space="preserve">
     <value>I'm Daniele Tentoni, enthusiast with Xamarin.Forms doing this application as a curriculum app to show what things I can do with this awesome framework.</value>
   </data>
   <data name="AboutPresentationTitle" xml:space="preserve">
     <value>Curriculum Application</value>
+  </data>
+  <data name="AwesomeIcons" xml:space="preserve">
+    <value>Awesome icons from Font Awesome.</value>
   </data>
   <data name="Calculate" xml:space="preserve">
     <value>Calculate</value>
@@ -131,5 +137,29 @@
   </data>
   <data name="CalculateToLocation" xml:space="preserve">
     <value>To Location</value>
+  </data>
+  <data name="Calculator" xml:space="preserve">
+    <value>Calculator</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
+  <data name="LottieDesc" xml:space="preserve">
+    <value>Fancy animations as Splashscreens and Calculator Job Done.</value>
+  </data>
+  <data name="MonkeyBarrelsDesc" xml:space="preserve">
+    <value>Store recently calculated refunds. You can retreive them from History Page.</value>
+  </data>
+  <data name="SignalABug" xml:space="preserve">
+    <value>Signal a Bug</value>
+  </data>
+  <data name="TravelApiDesc" xml:space="preserve">
+    <value>Ask for travel distance to Bing services.</value>
+  </data>
+  <data name="WhatImplemented" xml:space="preserve">
+    <value>What I've implemented in this application:</value>
   </data>
 </root>
