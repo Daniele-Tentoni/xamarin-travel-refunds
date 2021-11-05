@@ -25,7 +25,7 @@
     <PackageReference Include="MonkeyCache" Version="1.5.2" />
     <PackageReference Include="MonkeyCache.SQLite" Version="1.5.2" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
-    <PackageReference Include="Refit" Version="6.0.38" />
+    <PackageReference Include="Refit" Version="6.1.15" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Resources\**" />
