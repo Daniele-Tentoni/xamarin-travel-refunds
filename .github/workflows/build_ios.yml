@@ -2,7 +2,10 @@
 
 name: Build Xamarin.iOS app
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'TravelRefunds.Android/'
 
 jobs:
   build:
@@ -30,4 +33,4 @@ jobs:
       run: nuget restore .
 
     - name: Build
-      run: msbuild <csproj_file_path> /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild
+      run: msbuild TravelRefunds.iOS/ /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild
