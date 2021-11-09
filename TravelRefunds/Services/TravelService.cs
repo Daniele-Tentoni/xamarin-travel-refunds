@@ -5,32 +5,42 @@
     using System.Diagnostics;
     using System.Linq;
     using System.Threading.Tasks;
-    using MonkeyCache.SQLite;
-    using Refit;
-    using TravelRefunds.Models;
-    using Xamarin.Essentials;
 
-    interface ITravelApi
-    {
-        [Get("/REST/V1/Routes/Driving?wp.0={from}&wp.1={to}&avoid=minimizeTolls&key={bingMapsKey}")]
-        Task<Root> GetTravelDistanceAsync(string from, string to, string bingMapsKey);
-    }
+    using MonkeyCache.SQLite;
+
+    using Refit;
+
+    using TravelRefunds.Models;
+
+    using Xamarin.Essentials;
 
     public class TravelService
     {
         private const string API_KEY = "";
 
+        /// <summary>
+        /// Retrieve the local history of previous travels.
+        /// </summary>
+        /// <returns>List of travels.</returns>
         public async Task<IEnumerable<TravelQuery>> GetTravelHistoryAsync()
         {
             return await Task.Run(() =>
             {
-                var keys = Barrel.Current.GetKeys(MonkeyCache.CacheState.Active);
+                var keys = Barrel.Current.GetKeys();
                 var queries = keys.Select(s => Barrel.Current.Get<TravelQuery>(s));
                 var ordered = queries.OrderByDescending(o => o.RequestTime);
                 return queries;
             });
         }
 
+        /// <summary>
+        /// Add a travel query to the local history.
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="finish"></param>
+        /// <param name="distanceUnit"></param>
+        /// <param name="distance"></param>
+        /// <returns></returns>
         public Task<TravelQuery> AddToTravelHistoryAsync(string start, string finish, DistanceUnit? distanceUnit, double? distance)
         {
             var key = ComputeKey(start, finish);
@@ -51,6 +61,12 @@
             }
         }
 
+        /// <summary>
+        /// Get informations about travel from apis.
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="finish"></param>
+        /// <returns></returns>
         public async Task<string> GetTravelAsync(string start, string finish)
         {
             var key = ComputeKey(start, finish);
@@ -80,5 +96,10 @@
         }
 
         private string ComputeKey(string from, string to) => $"{from} - {to}";
+    }
+
+    public static class TravelExtensions
+    {
+        public static string TravelTo(this string start, string finish) => $"{start} - {finish}";
     }
 }
