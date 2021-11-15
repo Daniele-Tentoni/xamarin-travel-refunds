@@ -1,5 +1,6 @@
 ﻿namespace TravelRefunds.Models
 {
+    using System;
     using System.Runtime.Serialization;
 
     /// <summary>
@@ -27,6 +28,15 @@
         /// </summary>
         [DataMember(Name = "unit")]
         internal string Unit { get; set; }
+
+        internal double EurPrice
+        {
+            get
+            {
+                if (Unit == "EUR") { return Quantity; }
+                throw new NotImplementedException();
+            }
+        }
     }
 
     /// <summary>

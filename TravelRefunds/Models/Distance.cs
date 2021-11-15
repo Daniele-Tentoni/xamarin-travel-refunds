@@ -1,5 +1,6 @@
 ﻿namespace TravelRefunds.Models
 {
+    using System;
     using System.Runtime.Serialization;
 
     /// <summary>
@@ -14,18 +15,35 @@
     /// };
     /// </code>
     /// </example>
-    internal class Distance
+    public class Distance
     {
         /// <summary>
         /// Gets or sets measure value.
         /// </summary>
         [DataMember(Name = "measure")]
-        internal double Measure { get; set; }
+        internal double Measure { get; private set; }
 
         /// <summary>
         /// Gets or sets unit value.
         /// </summary>
         [DataMember(Name = "unit")]
-        internal string Unit { get; set; }
+        internal DistanceUnit DistanceUnit { get; private set; }
+
+        internal Distance(double measure, DistanceUnit unit) => (Measure, DistanceUnit) = (measure, unit);
+
+        /// <summary>
+        /// Return the distance measure expressed in Km unit.
+        /// </summary>
+        /// <returns>Distance in Km.</returns>
+        /// <exception cref="NotImplementedException">Other units than km.</exception>
+        internal double GetKmDistance()
+        {
+            if(DistanceUnit == DistanceUnit.Kilometer)
+            {
+                return Measure;
+            }
+
+            throw new NotImplementedException();
+        }
     }
 }

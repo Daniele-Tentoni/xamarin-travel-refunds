@@ -1,13 +1,21 @@
 ﻿namespace TravelRefunds.ViewModels
 {
     using System;
+    using System.Collections.ObjectModel;
+    using System.Diagnostics;
+    using System.Linq;
     using System.Net;
     using System.Threading.Tasks;
+
     using Lottie.Forms;
+
     using MvvmHelpers;
+
     using Refit;
+
     using TravelRefunds.Resources.Localization;
     using TravelRefunds.Services;
+
     using Xamarin.CommunityToolkit.Helpers;
     using Xamarin.Forms;
 
@@ -16,6 +24,8 @@
     public class CalculatorViewModel : BaseViewModel
     {
         private readonly TravelService travelService = DependencyService.Get<TravelService>();
+        private readonly VehicoleService vehicoleService = DependencyService.Get<VehicoleService>();
+        private readonly RefundService refundService = DependencyService.Get<RefundService>();
 
         private string _from;
         public string From
@@ -38,6 +48,15 @@
             set => SetProperty(ref _result, value);
         }
 
+        private Vehicole _selectedVehicole;
+        public Vehicole SelectedVehicole
+        {
+            get => _selectedVehicole;
+            set => SetProperty(ref _selectedVehicole, value);
+        }
+
+        public ObservableCollection<Vehicole> Vehicoles { get; }
+
         #region View LocalizedStrings
         public LocalizedString CalculateText { get; } = new(() => AppStrings.Calculate);
         public LocalizedString FromLocationPlaceholderText { get; } = new(() => AppStrings.CalculateFromLocation);
@@ -46,10 +65,35 @@
 
         public Command CalculateCommand { get; set; }
 
+        public Command LoadVehicolesCommand { get; set; }
+
         public CalculatorViewModel()
         {
             Title = "Calculator";
             CalculateCommand = new Command<AnimationView>(async (animationView) => await ExecuteCalculate(animationView));
+            LoadVehicolesCommand = new Command(async () => ExecuteLoadVehicoles());
+        }
+
+        private async Task ExecuteLoadVehicoles()
+        {
+            if (IsBusy) { return; }
+            IsBusy = true;
+            try
+            {
+                Vehicoles.Clear();
+                await Task.Delay(100);
+                var vehicoles = await vehicoleService.GetVehicoles();
+                vehicoles.ToList().ForEach(vehicole => Vehicoles.Add(vehicole));
+                SelectedVehicole = vehicoles.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception thrown: {ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async Task ExecuteCalculate(AnimationView animationView)
@@ -61,7 +105,7 @@
                 animationView.PlayAnimation();
                 animationView.IsVisible = true;
                 // https://api.geoapify.com/v1/routing?waypoints=44.136352,12.2422442|43.9098114,12.9131228&mode=drive&lang=it&apiKey=YOUR_API_KEY
-                
+
                 var res = await travelService.GetTravelAsync(From, To);
                 Result = res;
             }

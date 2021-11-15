@@ -16,7 +16,7 @@
 
     public class TravelService
     {
-        private const string API_KEY = "";
+        private const string API_KEY = "Aic4dtL2AdXUjQj6Scb7q6_22ainrPIrvIy1-_Yff70E2_BvDzUI52l0bF9-nNTS";
 
         /// <summary>
         /// Retrieve the local history of previous travels.
@@ -41,15 +41,14 @@
         /// <param name="distanceUnit"></param>
         /// <param name="distance"></param>
         /// <returns></returns>
-        public Task<TravelQuery> AddToTravelHistoryAsync(string start, string finish, DistanceUnit? distanceUnit, double? distance)
+        public Task<TravelQuery> AddToTravelHistoryAsync(string start, string finish, Distance distance)
         {
             var key = ComputeKey(start, finish);
-            var unit = distanceUnit ?? DistanceUnit.Kilometer;
             try
             {
                 return Task.Run(() =>
                 {
-                    var query = new TravelQuery { From = start, To = finish, DistanceUnit = unit, Distance = distance, RequestTime = DateTime.Now };
+                    var query = new TravelQuery { From = start, To = finish, Distance = distance, RequestTime = DateTime.Now };
                     Barrel.Current.Add(key, query, expireIn: TimeSpan.FromDays(1));
                     return query;
                 });
@@ -80,8 +79,9 @@
                 var set = distance.resourceSets.FirstOrDefault();
                 var res = set.resources.FirstOrDefault();
                 var unit = (DistanceUnit)Enum.Parse(typeof(DistanceUnit), res.distanceUnit);
-                var dis = res?.travelDistance;
-                _ = await AddToTravelHistoryAsync(start, finish, unit, dis);
+                var dis = res?.travelDistance ?? 0;
+                var dist = new Distance(dis, unit);
+                _ = await AddToTravelHistoryAsync(start, finish, dist);
                 return $"{res.travelDistance} {res.distanceUnit}";
             }
 

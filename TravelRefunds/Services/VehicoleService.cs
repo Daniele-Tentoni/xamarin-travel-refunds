@@ -33,7 +33,7 @@
             {
                 Name = name
             };
-            var key = vehicole.GetHashCode();
+            var key = vehicole.Name;
             try
             {
                 return Task.Run(() =>

@@ -18,14 +18,9 @@
         public string To { get; set; }
 
         /// <summary>
-        /// Distance Unit of the query. This value may change, accordingly to the distance.
+        /// Gets or sets the distance of the Travel.
         /// </summary>
-        public DistanceUnit DistanceUnit { get; set; }
-
-        /// <summary>
-        /// Travel distance of the query. This value may change, accordingly to the distance.
-        /// </summary>
-        public double? Distance { get; set; }
+        public Distance Distance { get; set; }
 
         /// <summary>
         /// The Datetime when user has request the query.

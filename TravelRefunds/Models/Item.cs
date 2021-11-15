@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace TravelRefunds.Models
 {
@@ -46,8 +47,10 @@ namespace TravelRefunds.Models
 
     public class EndLocation
     {
-        public List<double> bbox { get; set; }
-        public string name { get; set; }
+        [DataMember(Name = "bbox")]
+        public List<double> Bbox { get; set; }
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
         public Point point { get; set; }
         public Address address { get; set; }
         public string confidence { get; set; }
