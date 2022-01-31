@@ -17,7 +17,7 @@
     <!--<LangVersion>9.0</LangVersion>-->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.0.11" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
