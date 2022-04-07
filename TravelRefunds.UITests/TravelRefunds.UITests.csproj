@@ -33,7 +33,7 @@
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="Xamarin.UITest" Version="3.2.4" />
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.7.0</Version>
+      <Version>1.7.2</Version>
     </PackageReference>
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>4.0.11</Version>
